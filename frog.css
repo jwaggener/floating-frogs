@@ -1,0 +1,135 @@
+.frog {
+  height: calc(200px / var(--_d, 1) );
+  width: calc(200px / var(--_d, 1) );
+  /*width: 100%;*/
+  position: absolute;
+  /*transform: translate(-50%, -50%);*/
+  top: 0;
+  left: 0;
+  z-index: 500;
+  animation: floatUp 2s 1 linear forwards;
+}
+.frogface {
+  background-color: var(--_face1, #8ebc00);
+  height: calc(120px / var(--_d, 1) );
+  width: calc(160px / var(--_d, 1) );
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: calc(100px / var(--_d, 1) );
+}
+.frogface:before {
+  content: "";
+  position: absolute;
+  height: calc(60px / var(--_d, 1) );
+  width: calc(120px / var(--_d, 1) );
+  /* bottom part of face */
+  background-color: var(--_face2, #c1d218);
+  border-radius: 0 0 calc(60px / var(--_d, 1) ) calc(60px / var(--_d, 1) );
+  bottom: 0;
+  left: calc(20px / var(--_d, 1) );
+}
+.frogface:after {
+  content: "";
+  position: absolute;
+  width: calc(140px / var(--_d, 1) );
+  height: calc(8px / var(--_d, 1) );
+  /* line for mouth */
+  background-color: var(--_face3, #477a26);
+  border-radius: calc(5px / var(--_d, 1) );
+  left: calc(10px / var(--_d, 1) );
+  top: calc(55px / var(--_d, 1) );
+}
+.frogeyes,
+.frogeyes:before {
+  position: absolute;
+  background-color: #234106;
+  height: calc(25px / var(--_d, 1) );
+  width: calc(25px / var(--_d, 1) );
+  border-radius: calc(50% / var(--_d, 1) );
+  box-shadow: 0 0 0 calc(10px / var(--_d, 1) ) #ffffff, 0 0 0 calc(18px / var(--_d, 1) ) var( --_face1, #8ebc00);
+}
+.frogeyes {
+  left: calc(35px / var(--_d, 1) );
+}
+.frogeyes:before {
+  content: "";
+  left: calc(70px / var(--_d, 1) );
+}
+
+/* variables that relate to the keyboard relative to which the frogs are placed */
+.kb { --_d: 2 }
+
+/* variables to change the colors of the frog face depending on the note on the scale */
+.frog-A {
+  --_face1: #0016bc;
+  --_face2: #5a62f8;
+  --_face3: #26307a;
+}
+.frog-A# {
+  --_face1: #8ebc00;
+  --_face2: #c1d218;
+  --_face3: #477a26;
+}
+.frog-B {
+  --_face1: #bc00b3;
+  --_face2: #ee4bdb;
+  --_face3: #7a2676;
+}
+.frog-C {
+  --_face1: #bc0000;
+  --_face2: #f84a4a;
+  --_face3: #7a2626;
+}
+.frog-C# {
+  --_face1: #8ebc00;
+  --_face2: #c1d218;
+  --_face3: #477a26;
+}
+.frog-D {
+  --_face1: #bc7d00;
+  --_face2: #d29a18;
+  --_face3: #7a5f26;
+}
+.frog-D# {
+  --_face1: #8ebc00;
+  --_face2: #c1d218;
+  --_face3: #477a26;
+}
+.frog-E {
+  --_face1: #f8fc11;
+  --_face2: #f1fc74;
+  --_face3: #918f15;
+}
+.frog-F {
+  --_face1: #8ebc00;
+  --_face2: #c1d218;
+  --_face3: #477a26;
+}
+.frog-F# {
+  --_face1: #8ebc00;
+  --_face2: #c1d218;
+  --_face3: #477a26;
+}
+.frog-G {
+  --_face1: #00b9bc;
+  --_face2: #18d2c3;
+  --_face3: #26777a;
+}
+.frog-G# {
+  --_face1: #8ebc00;
+  --_face2: #c1d218;
+  --_face3: #477a26;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0, -100px);
+  }
+  
+  100% {
+    transform: translateY(-100vh);
+  }
+}
