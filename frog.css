@@ -9,6 +9,15 @@
   z-index: 500;
   animation: floatUp 2s 1 linear forwards;
 }
+.frog:after {
+  content: var(--_note, '');
+  position: absolute;
+  left: calc(60px / var(--_d, 1) );
+  right: calc(120px / var(--_d, 1) );
+  color: var(--_face2, black);
+  font-size: 36px;
+  text-decoration: bold;
+}
 .frogface {
   background-color: var(--_face1, #8ebc00);
   height: calc(120px / var(--_d, 1) );
@@ -64,61 +73,73 @@
 
 /* variables to change the colors of the frog face depending on the note on the scale */
 .frog-A {
+  --_note: 'A';
   --_face1: #0016bc;
   --_face2: #5a62f8;
   --_face3: #26307a;
 }
 .frog-A# {
+  --_note: 'A#';
   --_face1: #8ebc00;
   --_face2: #c1d218;
   --_face3: #477a26;
 }
 .frog-B {
+  --_note: 'B';
   --_face1: #bc00b3;
   --_face2: #ee4bdb;
   --_face3: #7a2676;
 }
 .frog-C {
+  --_note: 'C';
   --_face1: #bc0000;
   --_face2: #f84a4a;
   --_face3: #7a2626;
 }
 .frog-C# {
+  --_note: 'C#';
   --_face1: #8ebc00;
   --_face2: #c1d218;
   --_face3: #477a26;
 }
 .frog-D {
+  --_note: 'D';
   --_face1: #bc7d00;
   --_face2: #d29a18;
   --_face3: #7a5f26;
 }
 .frog-D# {
+  --_note: 'D#';
   --_face1: #8ebc00;
   --_face2: #c1d218;
   --_face3: #477a26;
 }
 .frog-E {
+  --_note: 'E';
   --_face1: #f8fc11;
   --_face2: #f1fc74;
   --_face3: #918f15;
 }
 .frog-F {
+  --_note: 'F';
   --_face1: #8ebc00;
   --_face2: #c1d218;
   --_face3: #477a26;
 }
 .frog-F# {
+  --_note: 'F#';
   --_face1: #8ebc00;
   --_face2: #c1d218;
   --_face3: #477a26;
 }
 .frog-G {
+  --_note: 'G';
   --_face1: #00b9bc;
   --_face2: #18d2c3;
   --_face3: #26777a;
 }
 .frog-G# {
+  --_note: 'G#';
   --_face1: #8ebc00;
   --_face2: #c1d218;
   --_face3: #477a26;

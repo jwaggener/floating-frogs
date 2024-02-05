@@ -3,6 +3,9 @@
 // notes
 const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"];
 
+// remove after timeout; the animaiotn in the css is 2sec
+const timeout = 2000; // 2sec
+
 //helpers
 const getHz = (N = 0) => 440 * Math.pow(2, N / 12);
 
@@ -56,11 +59,14 @@ function enableMIDI(element) {
 const getMIDIMessage = message => {
   // eg In MIDI, note 53 is E6, with a frequency of 1318.51
   const [command, note, velocity] = message.data;
-
+  
   switch (command) {
     case 144: // on
       if (velocity > 0) {
         const event = new CustomEvent("noteon", { detail: { note, velocity }});
+        element.dispatchEvent(event)
+      } else {
+        const event = new CustomEvent("noteoff", { detail: { note }});
         element.dispatchEvent(event)
       }
     break;
@@ -108,6 +114,7 @@ function noteon(key) {
     // any element that producrs a note
     // or always from the keyboard.
     const frogToAppend = getFrog();
+    setTimeout(() => frogToAppend.remove(), timeout);
     frogToAppend.classList.add(`frog-${key.dataset.note[0]}`);
     key.append(frogToAppend);
   }
